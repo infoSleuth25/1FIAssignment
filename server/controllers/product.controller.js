@@ -68,10 +68,57 @@ async function addProduct(req, res) {
         product : product
     });
 
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ msg: "Server error" });
+  } 
+  catch (err) {
+    res.status(500).json({ 
+        msg: "Internal Server Error",
+        err : err
+    });
   }
 }
 
-export { addProduct };
+async function getAllProducts(req,res){
+    try {
+        const allProducts = await Product.find({},{productName :1, productImages : 1});
+        return res.status(200).json({
+            msg : "All products received successfully",
+            products : allProducts
+        })
+    } 
+    catch (err) {
+        res.status(500).json({ 
+            msg: "Internal Server Error",
+            err : err
+        });
+    }
+}
+
+async function getProductDetails(req,res){
+    try{
+        const productId = req.params?.id;
+        if(!productId){
+            return res.status(400).json({
+                msg : "Please provide valid Id"
+            })
+        }
+        const product = await Product.findById(productId);
+        if(!product){
+            return res.status(400).json({
+                msg : "Product not found"
+            })
+        }
+        return res.status(200).json({
+            msg : "Product received successfully",
+            product : product
+        })
+    }
+    catch (err) {
+        res.status(500).json({ 
+            msg: "Internal Server Error",
+            err : err
+        });
+    }
+}
+
+
+export { addProduct, getAllProducts, getProductDetails };
