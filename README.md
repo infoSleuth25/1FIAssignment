@@ -1,11 +1,11 @@
 # 1FI Assignment 
 
 ## Tech Stack
-Backend: Node.js, Express.js. 
-Database: MongoDB with Mongoose. 
-File Uploads: Multer. 
-Cloud Storage: Cloudinary. 
-Frontend : React, Tailwind. 
+Backend: Node.js, Express.js. <br>
+Database: MongoDB with Mongoose. <br>
+File Uploads: Multer. <br>
+Cloud Storage: Cloudinary. <br>
+Frontend : React, Tailwind. <br>
 
 ## Database Schema
 ProductName : String
