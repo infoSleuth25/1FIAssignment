@@ -1,23 +1,23 @@
 # 1FI Assignment 
 
 ## Tech Stack
-Backend: Node.js, Express.js
-Database: MongoDB with Mongoose
-File Uploads: Multer
-Cloud Storage: Cloudinary
-Frontend : React, Tailwind
+Backend: Node.js, Express.js. 
+Database: MongoDB with Mongoose. 
+File Uploads: Multer. 
+Cloud Storage: Cloudinary. 
+Frontend : React, Tailwind. 
 
 ## Database Schema
 ProductName : String
 Product Images : [{
-    Public Id : String,
-    url : String
-}],
-ProductDescription : String,
+    Public Id : String,  
+    url : String. 
+}],  
+ProductDescription : String,  
 ProductDetails : [{
-    color : String,
-    storage : Number,
-    ram : Number,
+    color : String,  
+    storage : Number,  
+    ram : Number,  
     price : Number,
     cashback : Number
 }]
