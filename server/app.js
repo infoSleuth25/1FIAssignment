@@ -2,8 +2,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 const app = express();
+import cors from 'cors';
+import { corsOptions } from './utils/config.js';
 import productRoutes from './routes/product.route.js';
 
+
+
+app.use(cors(corsOptions))
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
